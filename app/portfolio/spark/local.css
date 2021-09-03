@@ -1,0 +1,1213 @@
+body {
+    margin-top: 0px; /* push body down below fixed header - IF NEEDED */
+}
+
+
+
+.soe-logo-m-soe:before {
+  color: #ffcb05;
+}
+
+header {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 3;
+  background: none;
+}
+/* we are not using the navbar for this site so we have to make some adjustments
+   so that our global js does not complain
+   and so our header does not look weird
+*/
+.navbar-soe {
+  background: none;
+  padding: 0;
+}
+
+
+.main {
+
+}
+
+
+/* Alternate transitions */
+/* copied from bootstrap 4.1 */
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition-duration: 0.6s;
+  transition-property: opacity;
+}
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-left,
+.carousel-fade .carousel-item-prev.carousel-item-right {
+  opacity: 1;
+}
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-right {
+  opacity: 0;
+}
+.carousel-fade .carousel-item-next,
+.carousel-fade .carousel-item-prev,
+.carousel-fade .carousel-item.active,
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-prev {
+  transform: translateX(0);
+}
+@supports (transform-style: preserve-3d) {
+  .carousel-fade .carousel-item-next,
+.carousel-fade .carousel-item-prev,
+.carousel-fade .carousel-item.active,
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-prev {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.be-the-spark-container {
+  position: absolute;
+  padding: 0;
+  top: 0;
+  left: 24px;
+}
+
+.be-the-spark-container h5 {
+  color: #ffcb05;
+  width: 196px;
+  font-size: 3rem;
+  line-height: 1;
+  text-align: left;
+  padding: 72px 8px 4px 8px;
+  border-left: 7px solid #ffcb05;
+  border-right: 7px solid #ffcb05;
+  border-bottom: 7px solid #ffcb05;
+
+  background: -webkit-linear-gradient(bottom, rgba(255,255,255,0) 32%, rgba(0, 39, 76, 1));
+  background: -moz-linear-gradient(bottom, rgba(255,255,255,0) 32%, rgba(0, 39, 76, 1));
+  background: -ms-linear-gradient(bottom, rgba(255,255,255,0) 32%, rgba(0, 39, 76, 1));
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 32%, rgba(0, 39, 76, 1));
+}
+
+.be-the-spark-container p {
+  color: #ffffff;
+  width: 196px;
+  font-size: 2.3rem;
+  text-align: left;
+  padding: 4px 8px 0px 16px;
+  line-height: 1.1;
+      text-shadow: 1px 1px #a0a0a0;
+}
+
+.be-the-spark-container p span {
+  font-weight: bold;
+}
+
+.be-the-spark-teach {
+  font-weight: 100;
+  font-size: 4rem;
+  color: #ffcb05;
+  position: absolute;
+  bottom: 32px;
+  left: 24px;
+}
+
+
+
+.spark-destiny h2 {
+  font-size: 24px;
+  margin-top: 40px;
+  color: #00274c;
+  font-weight: 600;
+}
+
+.spark-choice {
+  /* border: 7px solid #00274c; */
+  margin: 24px 0 48px 0;
+  width: 100%;
+}
+
+.spark-choice h2 {
+  margin: 0;
+}
+
+.spark-choice h2 a {
+  border: 7px solid #cccccc;
+  color: #cccccc;
+  padding: 24px 0;
+  font-size: 22px;
+  font-weight: 100;
+  display: block;
+}
+
+.spark-choice h2 a.active {
+  border: 7px solid #00274c;
+  color: #00274c;
+  background: #ffcb05;
+  box-shadow: 0 60px 0px -40px #00274c;
+}
+
+.spark-choice h2 a:hover {
+  border: 7px solid #00274c;
+  color: #00274c;
+  background: #ffcb05;
+}
+
+/* override main-css landing styles */
+/* .thin-title-ribbon {
+    padding: 16px;
+} */
+
+
+/* BEGIN styles for banner FLIP */
+.ribbon-container {
+  width: 100%;
+  height: 74px;
+  perspective: 600px;
+}
+
+.ribbon {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.ribbon.is-flipped {
+  transform: rotateX(180deg);
+}
+
+.ribbon-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 24px;
+  padding: 14px 6px 0 6px;
+  color: #ffcb05;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 2px;
+  backface-visibility: hidden;
+}
+
+.ribbon-face-front {
+  background: #00274c;
+}
+
+.ribbon-face-back {
+  background: #00274c;
+  transform: rotateX(180deg);
+}
+/* END styles for banner FLIP */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.spark-quote {
+  padding: 96px 24px 24px 24px;
+  color: #00274c;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.spark-quote-graphic {
+  display: inline-block;
+  color: #ccd4db;
+  font-size: 112px;
+  line-height: 0;
+  vertical-align: bottom;
+}
+
+.spark-quote-sarah {
+  position: relative;
+}
+.spark-quote-ashley {
+  position: relative;
+}
+.spark-quote-sharae {
+  position: relative;
+}
+
+.spark-quote-daphne {
+  position: relative;
+}
+
+.spark-quote-lawrence {
+  position: relative;
+}
+
+.spark-box {
+  width: 168px;
+  border: 7px solid #ffcb05;
+  padding: 8px;
+  line-height: 1.1;
+  font-size: 1.6rem;
+  color: #ffffff;
+  background: -webkit-linear-gradient(bottom, rgba(255,255,255,0) 32%, rgba(0, 39, 76, .7));
+  background: -moz-linear-gradient(bottom, rgba(255,255,255,0) 32%, rgba(0, 39, 76, .7));
+  background: -ms-linear-gradient(bottom, rgba(255,255,255,0) 32%, rgba(0, 39, 76, .7));
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 32%, rgba(0, 39, 76, .7));
+  z-index: 2;
+}
+
+.spark-box span {
+  font-size: 1.1rem;
+  display: inline-block;
+  line-height: 1.1;
+  margin-top: 4px;
+}
+
+.spark-box-sarah {
+    padding-top: 160px;
+    position: absolute;
+    bottom: 240px;
+    right: 24px;
+  }
+
+.spark-box-ashley {
+  padding-top: 160px;
+  position: absolute;
+  width: 192px;
+  bottom: 176px;
+  right: 24px;
+}
+.spark-box-sharae {
+  padding-top: 134px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 176px;
+}
+
+.spark-box-daphne {
+  padding-top: 188px;
+  position: absolute;
+  bottom: 248px;
+  right: 24px;
+  width: 228px;
+}
+.spark-box-lawrence {
+  padding-top: 140px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 192px;
+}
+
+.spark-box-hugo {
+  padding: 8px;
+  line-height: 1.1;
+  font-size: 1.6rem;
+  text-align: right;
+  color: #ffffff;
+  z-index: 2;
+  padding-top: 88px;
+  position: absolute;
+  top: 48px;
+  left: -48px;
+  width: 248px;
+}
+.spark-box-hugo span {
+  font-size: 1.1rem;
+  display: inline-block;
+  line-height: 1.1;
+  margin-top: 4px;
+}
+
+.spark-box-brianna {
+  position: absolute;
+    top: 56px;
+    left: 24px;
+  padding: 0;
+  line-height: 1.1;
+  font-size: 1.6rem;
+  text-align: left;
+  color: #ffffff!important;
+  z-index: 2;
+  padding-top: 32px;
+}
+.spark-box-brianna span {
+  font-size: 1.1rem!important;
+  display: inline-block!important;
+  line-height: 1.1!important;
+  margin-top: 4px!important;
+  color: #ffffff!important;
+  font-style: normal!important;
+}
+
+.what-motivates-you {
+  background: rgba(0, 39, 76, .8);
+  padding: 40px 24px;
+  /* position: absolute;
+  width: 570px;
+  height: 88%;
+  right: 0;
+  top: 46px; */
+}
+
+.what-motivates-you h2 {
+  color: #ffcb05;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.what-motivates-you p,
+.are-you-ready p {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.are-you-ready {
+  background: rgba(0, 39, 76, .8);
+  padding: 24px;
+  /* position: absolute;
+  width: 570px;
+  height: 64%;
+  left: 0;
+  top: 222px; */
+}
+.are-you-ready h2 {
+  color: #ffcb05;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+
+
+.ranked-box {
+  width: auto;
+  margin: 8px 24px;
+  border: 7px solid #ffcb05;
+  padding: 24px;
+  text-align: center;
+  z-index: 2;
+}
+.ranked-box img {
+  width: auto;
+}
+.ranked-sign {
+  display: inline-block;
+  font-size: 2.5rem;
+  vertical-align: top;
+  color: #00274c;
+}
+.ranked-box h2.ranked {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  line-height: 4rem;
+  font-size: 5rem;
+  font-weight: 800;
+}
+.ranked-box h2.ranked span {
+  font-size: 4rem;
+  font-weight: 800;
+}
+.ranked-box h3 {
+  color: #0076bb;
+  font-weight: 100;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+.ranked-box h4 {
+  font-weight: 100;
+  font-size: 1.3rem;
+}
+.ranked-box span {
+  font-size: 1rem;
+  font-style: italic;
+  color: #00274c;
+  display: inline-block;
+  line-height: 1.2;
+  margin-top: 6px;
+}
+
+.ranked-box-brianna {
+  height: auto;
+}
+
+.ranked-paragraph {
+  margin-left: 12rem;
+}
+
+.faux-wrap {
+  float: none;
+  margin-top: 0;
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.bg-maize-to-top {
+  background: #ffcb05;
+  /* transparent gradient using rgba */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 32%, rgba(255,203,1));
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 32%, rgba(255,203,1));
+  background: -ms-linear-gradient(top, rgba(255,255,255,0) 32%, rgba(255,203,1));
+  background: linear-gradient(to top, rgba(255,255,255,0) 32%, rgba(255,214,99, .8));
+}
+
+
+
+
+
+
+.ranked-box-2 {
+  /* width: 248px; */
+  /* position: absolute; */
+  /* left: 520px; */
+  margin: 8px 24px;
+  border: 7px solid #ffcb05;
+  padding: 24px;
+  text-align: center;
+  /* height: 936px; */
+  z-index: 2;
+}
+
+.ranked-box-2 h2.ranked {
+  padding: 0;
+  margin: 0;
+  line-height: 7rem;
+  font-size: 5.4rem;
+  color: #024794;
+  font-weight: 700;
+}
+.ranked-box-2 h2.ranked span {
+  font-size: 4rem;
+  font-weight: 800;
+}
+.ranked-box-2 h3 {
+  color: #0076bb;
+  font-weight: 100;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+}
+.ranked-box-2 h4 {
+  font-weight: 100;
+  font-size: 1.3rem;
+  color: #0076bb;
+  margin-top: 16px;
+}
+
+.faux-wrap-2 {
+  /* float: right; */
+  margin-top: 0;
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.bg-lite-blue-to-top {
+  background: #ffcb05;
+  /* transparent gradient using rgba */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 32%, rgba(255,203,1));
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 32%, rgba(255,203,1));
+  background: -ms-linear-gradient(top, rgba(255,255,255,0) 32%, rgba(255,203,1));
+  background: linear-gradient(to top, rgba(255,255,255,0) 32%, rgba(88, 122, 188, 1));
+}
+
+
+
+.ranked-box-3 {
+  position: relative;
+  border: 7px solid #ffcb05;
+  padding: 24px;
+  text-align: center;
+  z-index: 2;
+  margin: 8px 24px;
+}
+.ranked-box-3 h2.ranked {
+  padding: 0;
+  margin: 0;
+  line-height: 7rem;
+  font-size: 5.4rem;
+  color: #024794;
+  font-weight: 700;
+}
+.ranked-box-3 h3 {
+  color: #024794;
+  font-weight: 100;
+  font-size: 2.2rem;
+  line-height: .6rem;
+}
+.ranked-box-3 h4 {
+  font-weight: 100;
+  font-size: 1.6rem;
+  color: #024794;
+  margin-top: 40px;
+}
+.faux-wrap-3 {
+  margin-top: 0;
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+
+.grad-applying-margin {
+  margin-bottom: 144px!important;
+}
+
+
+
+
+
+.bg-maize-bar {
+  background-color: #ffcb05;
+  padding: 32px;
+  width: 100%;
+  /* position: absolute;
+  bottom: 0; */
+}
+
+.bg-split-maize {
+    /* background: #fff4d2; */
+    background: #fff9e7;
+}
+
+.bg-split-maize h2,
+.bg-split-white h2 {
+  padding: 24px 8px 4px 24px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.bg-split-white h3 {
+  color: #0076bb;
+  padding: 12px 8px 0px 24px;
+  margin-bottom: 4px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.bg-split-maize p,
+.bg-split-white p {
+  padding: 4px 24px;
+}
+
+.bg-split-white {
+    background: #ffffff;
+}
+.btn-mobile-toggle {
+  margin: 16px 0 16px 24px;
+}
+.mobile-toggle {
+/* hack:  add nothing here so we dont interfere with .collapse behavior */
+}
+
+
+
+.plain-ribbon-white {
+  border-bottom: 1px solid #00274c;
+}
+
+.plain-ribbon-white h2 {
+  font-size: 32px;
+}
+
+.plain-ribbon-white h3 {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+
+a.btn-maize-blue-border {
+    font-size: 20px;
+    border: none;
+    background-color: #0076bb;
+    padding: 16px 40px;
+    border-radius: 16px;
+    color: #eff0f1;
+}
+
+
+
+/*
+Min-Width: Refers to everything greater than or equal to the amount given.
+Max-Width: Refers to everything less than or equal to the amount given.
+
+The min-width CSS property is used to set the minimum width of a given element.
+It prevents the used value of the width property from becoming smaller than the value specified for min-width.
+
+The value of min-width overrides both max-width and width.
+*/
+
+/*==========  Mobile First Method  ==========*/
+
+/*
+Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+*/
+
+
+
+
+
+
+/* https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+/* Landscape */
+/* @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+ */
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+/* Landscape */
+/* @media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+} */
+
+/* ----------- Galaxy S6 ----------- */
+/* Landscape */
+/* @media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 4)
+  and (orientation: landscape) {
+
+} */
+/* ----------- Google Pixel ----------- */
+/* Landscape */
+/* @media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+
+} */
+
+
+
+
+
+
+
+
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+
+
+
+
+
+
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+  header {
+    top: 40px;
+    right: 32px;
+  }
+
+  .be-the-spark-container {
+    top: 0;
+    left: 32px;
+  }
+
+
+
+} /* ENDS: @media (min-width: 768px) { */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+
+  header {
+    top: 40px;
+    right: 142px;
+  }
+
+  .main {
+  /*   background-position: center center;
+    height: 500px;
+    padding: 24px; */
+  }
+
+  /* .thin-title-ribbon {
+      font-size: 28px;
+      margin-top: 12px;
+  }
+ */
+
+  .be-the-spark-container {
+    top: 0;
+    left: 142px;
+  }
+
+  .be-the-spark-teach {
+    font-size: 4rem;
+    bottom: 32px;
+    right: 204px;
+    left: auto;
+  }
+
+
+  .spark-destiny h2 {
+    font-size: 32px;
+    margin-top: 40px;
+    font-weight: 600;
+  }
+
+  .spark-choice h2 a {
+    border: 7px solid #cccccc;
+    padding: 24px 0;
+    font-size: 48px;
+  }
+
+  .spark-choice h2 a.active {
+    box-shadow: 0 84px 0px -55px #00274c;
+  }
+
+
+
+  /* BEGIN styles for banner FLIP */
+  .ribbon-container {
+    width: 100%;
+    height: 74px;
+    perspective: 600px;
+  }
+
+  .ribbon-face {
+    line-height: 78px;
+    padding: 0;
+    font-size: 28px;
+    letter-spacing: 4px;
+  }
+  /* END styles for banner FLIP */
+
+
+
+  .bg-split-maize h2,
+  .bg-split-white h2 {
+    padding: 104px 56px 4px 56px;
+    font-size: 1.4rem;
+
+  }
+
+  .bg-split-white h3 {
+    padding: 12px 8px 0px 56px;
+    margin-bottom: 4px;
+    font-size: 1.2rem;
+  }
+
+  .bg-split-maize p,
+  .bg-split-white p {
+    padding: 4px 56px;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .what-motivates-you {
+    background: rgba(0, 39, 76, .8);
+    padding: 40px;
+    position: absolute;
+    width: 570px;
+    height: 88%;
+    right: 0;
+    top: 46px;
+  }
+
+  .what-motivates-you h2 {
+    font-size: 56px;
+    line-height: 1;
+    font-weight: 800;
+  }
+
+  .what-motivates-you p,
+  .are-you-ready p {
+    font-size: 1rem;
+  }
+
+  .are-you-ready {
+    background: rgba(0, 39, 76, .8);
+    padding: 40px;
+    position: absolute;
+    width: 570px;
+    height: 64%;
+    left: 0;
+    top: 222px;
+  }
+  .are-you-ready h2 {
+    color: #ffcb05;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .spark-quote {
+    padding: 8px!important;
+    color: #ffffff;
+    font-size: 1.5rem;
+    line-height: 1.1;
+    text-shadow: 1px 1px #717171;
+    /* lets make it a bit easier to read the text */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(80, 80, 80, 0.7) 0%, rgba(125,185,232,0) 72%);
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(80, 80, 80, 0.7) 0%,rgba(125,185,232,0) 72%);
+    background: radial-gradient(ellipse at center, rgba(80, 80, 80, 0.7) 0%,rgba(125,185,232,0) 72%);
+  }
+  .spark-quote-graphic {
+    display: inline;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    vertical-align: inherit;
+  }
+  .spark-quote-sarah {
+    position: absolute;
+    bottom: 72px;
+    left: 32px;
+    width: 302px;
+    font-size: 1rem;
+    padding: 8px!important;
+  }
+
+  .spark-box-sarah {
+    padding-top: 354px;
+    position: absolute;
+    top: 140px;
+    bottom: auto;
+    right: 616px;
+  }
+
+  .spark-quote-ashley {
+    position: absolute;
+    top: 48px;
+    right: 372px;
+    width: 248px;
+    font-size: 1rem;
+  }
+  .spark-box-ashley {
+    padding-top: 354px;
+    position: absolute;
+    width: 192px;
+    top: 88px;
+    right: 172px;
+  }
+
+  .spark-quote-sharae {
+    position: absolute;
+    top: 80px;
+    left: 56px;
+    width: 488px;
+    line-height: 1.2;
+  }
+  .spark-box-sharae {
+    padding-top: 514px;
+    position: absolute;
+    top: 120px;
+    right: 280px;
+    width: 248px;
+  }
+
+  .spark-quote-lawrence {
+    position: absolute;
+    bottom: 48px;
+    right: 56px;
+    width: 488px;
+    line-height: 1.2;
+  }
+  .spark-box-lawrence {
+    padding-top: 514px;
+    position: absolute;
+    top: 133px;
+    left: 280px;
+    width: 248px;
+  }
+
+  .spark-quote-daphne {
+    position: absolute;
+    top: 80px;
+    right: 40px;
+    width: 488px;
+    line-height: 1.2;
+  }
+  .spark-box-daphne {
+    padding-top: 656px;
+    position: absolute;
+    bottom: -76px;
+    left: 336px;
+    width: 248px;
+  }
+
+  .ranked-box {
+    width: 248px;
+    position: absolute;
+    left: -116px;
+    margin: 8px 32px;
+    padding: 24px;
+    height: 936px;
+  }
+  .ranked-sign {
+    font-size: 5rem;
+  }
+  .ranked-box img {
+    width: 168px;
+  }
+  .ranked-box h2.ranked {
+    padding: 0;
+    margin: 0;
+    line-height: 7rem;
+    font-size: 9rem;
+    font-weight: 800;
+  }
+  .ranked-box h2.ranked span {
+    font-size: 4rem;
+    font-weight: 800;
+  }
+  .ranked-box h3 {
+    font-weight: 100;
+    font-size: 2.4rem;
+    line-height: 2.5rem;
+  }
+  .ranked-box h4 {
+    font-weight: 100;
+    font-size: 1.3rem;
+  }
+  .ranked-box span {
+    font-size: 1rem;
+    display: inline-block;
+    line-height: 1.2;
+    margin-top: 6px;
+  }
+
+
+  .spark-box-brianna {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0;
+    line-height: 1.1;
+    font-size: 1.6rem;
+    text-align: left;
+    color: #ffffff!important;
+    z-index: 2;
+    padding-top: 32px;
+  }
+  .spark-box-brianna span {
+    font-size: 1.1rem!important;
+    display: inline-block!important;
+    line-height: 1.1!important;
+    margin-top: 4px!important;
+    color: #ffffff!important;
+    font-style: normal!important;
+  }
+
+  .ranked-box-brianna {
+    height: 872px;
+  }
+
+  .faux-wrap {
+    float: left;
+    margin-top: 16px;
+    width: 192px;
+    height: 548px;
+    display: inline-block;
+  }
+
+
+
+
+  .faux-wrap-2 {
+    float: right;
+    margin-top: 16px;
+    width: 240px;
+    height: 448px;
+    display: inline-block;
+  }
+
+  .ranked-box-2 {
+    width: 248px;
+    position: absolute;
+    left: 520px;
+    margin: 8px 32px;
+    border: 7px solid #ffcb05;
+    padding: 24px;
+    text-align: center;
+    height: 936px;
+    z-index: 2;
+  }
+
+  .ranked-box-2 h2.ranked {
+    padding: 0;
+    margin: 0;
+    line-height: 7rem;
+    font-size: 5.4rem;
+    color: #ffcb05;
+    font-weight: 700;
+  }
+  .ranked-box-2 h2.ranked span {
+    font-size: 4rem;
+    font-weight: 800;
+  }
+  .ranked-box-2 h3 {
+    color: #ffffff;
+    font-weight: 100;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+  .ranked-box-2 h4 {
+    font-weight: 100;
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-top: 16px;
+  }
+
+
+
+  .spark-box-hugo {
+    padding: 8px;
+    line-height: 1.1;
+    font-size: 1.6rem;
+    text-align: right;
+    color: #ffffff;
+    z-index: 2;
+    padding-top: 514px;
+    position: absolute;
+    top: 148px;
+    left: 348px;
+    width: 248px;
+  }
+  .spark-box-hugo span {
+    font-size: 1.1rem;
+    display: inline-block;
+    line-height: 1.1;
+    margin-top: 4px;
+  }
+
+
+
+  .faux-wrap-3 {
+    float: left;
+    margin-top: 16px;
+    width: 240px;
+    height: 296px;
+    display: inline-block;
+  }
+
+
+  .ranked-box-3 {
+    position: absolute;
+    border: 7px solid #ffcb05;
+    padding: 24px;
+    text-align: center;
+    z-index: 2;
+    width: 280px;
+    left: -104px;
+    margin: 8px 32px;
+    height: 728px;
+  }
+  .ranked-box-3 h2.ranked {
+    padding: 0;
+    margin: 0;
+    line-height: 7rem;
+    font-size: 5.4rem;
+    color: #ffcb05;
+    font-weight: 700;
+  }
+  .ranked-box-3 h3 {
+    color: #ffffff;
+    font-weight: 100;
+    font-size: 2.2rem;
+    line-height: .6rem;
+  }
+  .ranked-box-3 h4 {
+    font-weight: 100;
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-top: 48px;
+  }
+
+
+
+
+  .plain-ribbon-white h2 {
+    font-size: 48px;
+  }
+
+  .plain-ribbon-white h3 {
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+
+
+
+
+
+
+
+
+} /* ENDS @media (min-width: 992px) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+
+
+
+
+} /* ENDS: @media (min-width: 1200px) { */
+
+

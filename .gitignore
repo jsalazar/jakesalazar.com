@@ -1,0 +1,15 @@
+# dependencies
+node_modules
+bower_components
+
+# compiled output
+/dist
+/.tmp
+/scripts
+/styles
+/temp-assets
+
+# misc files
+.DS_Store
+Thumbs.db
+how-to.txt

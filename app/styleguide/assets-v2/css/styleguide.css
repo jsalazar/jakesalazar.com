@@ -1,0 +1,158 @@
+/*
+MAIZE: #ffcb05
+BLUE: #00274c
+*/
+
+/* ==========================================================================
+   SOE Style Guide Documentation Styles
+   ========================================================================== */
+
+
+body {
+    padding-top: 70px;
+}
+
+
+
+
+/* for photos */
+.float-right {
+  float: right;
+  margin: 8px 0 8px 8px;
+}
+
+
+
+/* General styles for all menus */
+.sg-menu {
+    position: fixed;
+    width: 240px;
+    height: 100%;
+    top: 70px;
+    z-index: 1000;
+    right: -240px;
+}
+
+.sg-menu.sg-menu-open {
+    right: 0px;
+}
+
+/* Push classes applied to the body */
+.sg-menu-push {
+    overflow-x: hidden;
+    position: relative;
+    left: 0;
+}
+
+.sg-menu-push-left {
+    left: -240px;
+}
+
+/* Transitions */
+.sg-menu,
+.sg-menu-push {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.sg-heading {
+    font-size: 32px;
+    color: #e7e7e7;
+    font-style: italic;
+}
+
+.sg-sub-heading {
+    font-size: 20px;
+    color: #e9e9e9;
+}
+
+pre code {
+    font-size: 14px;
+}
+
+/* mimics slideToggle, faux hidden with overflow:hidden and max-height */
+.code-container {
+    max-height: 1em;
+    height: auto;
+    overflow: hidden;
+    padding-top: 8px;
+    -webkit-transition: max-height 0.6s ease-out;
+    -moz-transition: max-height 0.6s ease-out;
+    -o-transition: max-height 0.6s ease-out;
+    transition: max-height 0.6s ease-out;
+}
+
+.expanded {
+    /* adjust this to whatever max-heigh is necessary to display your largest elements*/
+    max-height: 80em;
+}
+
+.code-sample {
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+}
+
+.code-usage {
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+    margin-left: 8px;
+}
+
+/*
+UMMA TAN
+HEX: cfc096
+
+BURTON TOWER BEIGE
+HEX: 9b9a6d
+
+THE ROCK GRAY
+HEX: 989c97
+
+OBSERVATORY WHITE
+HEX: e4e1df
+
+ANGELL HALL ASH
+HEX: a79d96
+
+LAW QUAD STONE
+HEX: 655a52
+
+HILL BROWN
+HEX: 7a121c
+
+LSA ORANGE
+HEX: cc6600
+
+ARCHWAY IVY
+HEX: 7e732f
+
+RACKHAM ROOF GREEN
+HEX: 83b2a8
+
+CANHAM POOL BLUE
+HEX: 587abc
+
+MATTHAEI VIOLET
+HEX: 575294
+
+
+
+HEX: e5e5e5
+HEX: eff0f1
+
+HEX: 40658f
+HEX: 465d85
+HEX: 0d57aa
+HEX: 002a5b
+HEX: 024794
+
+HEX: 886b01
+
+HEX: 333333
+HEX: 555555
+
+
+*/

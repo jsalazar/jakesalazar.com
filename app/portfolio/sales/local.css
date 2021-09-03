@@ -1,0 +1,537 @@
+
+body {
+    margin-top: 0px; /* push body down below fixed header - IF NEEDED */
+}
+
+
+.soe-logo-m-soe:before {
+    color: #ffffff;
+}
+
+header {
+  position: absolute;
+  top: 24px;
+  /* left: 24px; */
+  z-index: 3;
+  background: none;
+}
+/* we are not using the navbar for this site so we have to make some adjustments
+   so that our global js does not complain
+   and so our header does not look weird
+*/
+/* .navbar-soe {
+  background: none;
+  padding: 0;
+}
+ */
+/*  .navbar-soe {
+    background-color: rgba(0, 39, 76, 0.8);
+} */
+
+.main {
+  color: #fff;
+  background-color: #747474;
+  background-image: url(img/dl-main-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  height: 512px;
+  padding: 0;
+
+}
+
+
+
+
+
+
+.bg-maize-to-left {
+  background: #ffcb05;
+  /* transparent gradient using rgba */
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0) 32%, rgba(255,203,1));
+  background: -moz-linear-gradient(left, rgba(255,255,255,0) 32%, rgba(255,203,1));
+  background: -ms-linear-gradient(left, rgba(255,255,255,0) 32%, rgba(255,203,1));
+  background: linear-gradient(to left, rgba(255,255,255,0) 32%, rgba(255,203,1));
+  height: 512px;
+}
+.bg-maize-content {
+  position: absolute;
+  top: 48%;
+  left: 5%;
+  z-index: 1;
+}
+.bg-maize-graphic {
+  opacity: 0.2;
+  position: absolute;
+  top: 32%;
+  left: 0%;
+  z-index: 0;
+}
+.bg-maize-graphic img {
+  width: 88%;
+}
+.bg-maize-to-left h1 {
+  color: #fff;
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: 800;
+}
+.bg-maize-to-left h2 {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+
+
+.bg-white-intro {
+  text-align: center;
+  color: #ffffff;
+}
+.bg-white-intro h2 {
+    font-size: 28px;
+    color: #0d57aa;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    margin-bottom: 48px;
+}
+.bg-white-intro h3 {
+    font-size: 20px;
+    color: #00274c;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+.bg-white-intro hr {
+    border-top: 1px solid #00274c;
+    border-bottom: 1px solid #00274c;
+    margin: 16px auto 24px;
+    text-align: center;
+    width: 8em;
+}
+
+
+.bg-soe-blue-pastel i {
+  color: #ccd4db;
+}
+.bg-soe-blue-pastel .card-title {
+  font-size: 1.5rem;
+}
+.bg-soe-blue-pastel .card-text {
+  color: #ffffff;
+}
+
+.bg-soe-maize-pastel .media-body h5 {
+  font-size: 1.5rem;
+}
+
+/* override BS default */
+.list-group-item.active {
+    z-index: 2;
+    color: #ffcb05;
+    background-color: #00274c;
+    border-color: #00274c;
+}
+
+.tab-pane li {
+  margin-bottom: 12px;
+}
+
+
+
+#faq-tab .list-group-item {
+  color: #0d57aa;
+  padding: 1.2rem 1.25rem;
+  border: 1px solid #0d57aa;
+  background: rgba(88, 122, 188, .03);
+}
+
+#faq-tab .list-group-item.active {
+  z-index: 2;
+  color: #ffffff;
+  background-color: #0d57aa;
+  border-color: #0d57aa;
+}
+
+#nav-faqContent {
+  padding-top: 32px;
+}
+
+
+
+.photo-border {
+    border: 2px solid #ffcb05;
+    border-radius: 14px;
+    display: inline-block;
+    padding: 8px;
+    z-index: 3;
+    margin: 0 auto 24px;
+}
+.photo-border img {
+  border-radius: 14px;
+}
+
+.marketing-copy h3 {
+  color: #0D57A4;
+}
+
+.plain-ribbon-white h2 {
+    font-size: 28px;
+}
+  .plain-ribbon-white h3 {
+      font-size: 20px;
+      font-weight: 400;
+  }
+section h2,
+.bg-blue-cover-intro h1 {
+  font-size: 2rem;
+}
+
+
+/*
+  override global style to display form element on darkBG
+  in main-landing.css
+*/
+.action-steps {
+    border: 4px solid #ffcb05;
+    border-radius: 14px;
+    padding: 2rem;
+    min-height: 28rem;
+    text-align: center;
+    margin-bottom: 16px;
+    background: #ffffff;
+}
+.action-steps p {
+  border-top: 2px dashed #cccccc;
+}
+.action-steps h3 {
+  font-size: 4rem;
+}
+.action-steps h3.down-size {
+  font-size: 2rem;
+}
+.action-steps-number {
+  font-size: 1.2rem;
+  padding-top: 44px;
+}
+.action-steps-number span {
+  font-size: 1.4rem;
+  display: block;
+}
+.action-steps-number img {
+  width: 60%;
+  padding: 16px 0 0 0;
+}
+.bg-blue-cover i {
+    color: #00274c;
+    margin-bottom: 24px;
+}
+
+
+
+
+
+
+
+.toggleHash {
+    display: none;
+    padding: 8px 16px;
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: 16px;
+}
+
+/* .toggleLink {
+    display: block;
+    background-color: #f2f2f2;
+    padding: 8px 16px;
+}
+ */
+.toggleLink {
+    display: block;
+    background-color: rgba(13, 87, 170, .1);
+    padding: 8px 48px 8px 16px;
+    color: #0d57aa;
+    font-size: 1.3rem;
+}
+
+.toggleHeading {
+  position: relative;
+}
+
+.toggleHeading > a::before,
+.toggleHeading > a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    height: 2px;
+    width: 14px;
+    background: #c9cbc4;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+
+    -webkit-transition: width 0.3s, -webkit-transform 0.3s;
+    -moz-transition: width 0.3s, -moz-transform 0.3s;
+    transition: width 0.3s, transform 0.3s;
+}
+
+.toggleHeading > a::before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    right: 25px;
+}
+
+.toggleHeading > a::after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    right: 15px;
+}
+
+.toggleHeading > a.selected::before,
+.toggleHeading > a.selected::after {
+    width: 23px;
+}
+
+.toggleHeading > a.selected::before {
+    -webkit-transform: translateX(10px) rotate(-45deg);
+    -moz-transform: translateX(10px) rotate(-45deg);
+    -ms-transform: translateX(10px) rotate(-45deg);
+    -o-transform: translateX(10px) rotate(-45deg);
+    transform: translateX(10px) rotate(-45deg);
+}
+
+.toggleHeading > a.selected::after {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+
+
+
+.booya-btn {
+  position: absolute;
+  top: 55%;
+  right: 1%;
+  z-index: 1;
+}
+
+a.btn-blue-booya {
+  font-size: 20px;
+  /* border: 3px solid #00274c; */
+  background-color: #00274c;
+  padding: 16px 40px;
+  color: #0099ff;
+}
+a.btn-blue-booya:hover {
+  color: #ffcb05;
+  background-color: #024794;
+}
+a.btn-blue-booya span {
+  color: #fff;
+  font-size: 28px;
+  display: block;
+}
+
+a.btn-blue-booya h2 {
+  color: #ffcb05;
+  font-size: 32px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+Min-Width: Refers to everything greater than or equal to the amount given.
+Max-Width: Refers to everything less than or equal to the amount given.
+
+The min-width CSS property is used to set the minimum width of a given element.
+It prevents the used value of the width property from becoming smaller than the value specified for min-width.
+
+The value of min-width overrides both max-width and width.
+*/
+
+/*==========  Mobile First Method  ==========*/
+
+/*
+Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+*/
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+
+
+
+
+
+
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+
+
+}
+
+
+
+
+
+
+
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+
+  header {
+    top: 40px;
+    left: 72px;
+  }
+
+  .bg-maize-content {
+      position: absolute;
+      top: 40%;
+      left: 5%;
+      z-index: 1;
+  }
+  .bg-maize-graphic {
+    opacity: 0.2;
+    position: absolute;
+    top: 4%;
+    left: 0%;
+    z-index: 0;
+  }
+  .bg-maize-graphic img {
+   width: 100%;
+  }
+  .bg-maize-to-left h1 {
+    font-size: 5rem;
+    font-weight: 800;
+  }
+  .bg-maize-to-left h2 {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+  .bg-maize-to-left {
+    height: 848px;
+  }
+
+  .main {
+    background-position: center center;
+    height: 848px;
+  }
+
+
+
+  section h2,
+  .bg-blue-cover-intro h1 {
+    font-size: 3rem;
+  }
+
+  .plain-ribbon-white h2 {
+      font-size: 42px;
+  }
+  .plain-ribbon-white h3 {
+      font-size: 24px;
+      font-weight: 400;
+  }
+
+
+
+
+
+  .booya-btn {
+    position: absolute;
+    top: 55%;
+    right: 1%;
+    z-index: 1;
+  }
+
+  a.btn-blue-booya {
+    font-size: 20px;
+    padding: 16px 40px;
+  }
+
+  a.btn-blue-booya span {
+    font-size: 28px;
+  }
+
+  a.btn-blue-booya h2 {
+    font-size: 32px;
+  }
+
+
+
+
+
+
+
+} /* ENDS @media (min-width: 992px) */
+
+
+
+
+
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+
+
+
+} /* ENDS: @media (min-width: 1200px) { */
+

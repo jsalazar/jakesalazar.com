@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Animation with Randomness</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="">
+        <meta name="description" content="yeah, I'm cool">
+        <meta name="author" content="Jake Salazar">
+ 
+        <!-- LAB CSS +++++++++++++++++++++++++++++++++++++ -->
+        <style>
+          body {
+            margin: 0;
+            padding:0;
+          }
+
+        </style>
+</head>
+<body>
+
+  <div id="svgHolder">
+    <div id="d3-demo"> </div>
+  </div>
+
+
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+
+  <script>
+  // attempt to get width of parent element
+  var osWidth = document.getElementById('svgHolder').offsetWidth;
+
+  var svgWidth  = osWidth, 
+        svgHeight = window.innerHeight,
+        nodes = d3.range(200).map(function() {
+
+          return {
+
+            radius: Math.random() * 12 + 4,
+            cx: Math.random() * svgWidth - 50,
+            cy: Math.random() * svgHeight - 50 
+
+          }
+
+        });
+
+  // SVG we will draw to
+  var svg = d3.select("#d3-demo").append("svg")
+      .attr("width", svgWidth)
+      .attr("height", svgHeight);
+
+  for (var i = 0; i < nodes.length; i++) {
+
+    svg.append('circle')
+    .attr("r", 1)
+    .attr("cx", Math.random() * svgWidth) // place individual at random coordinates then transition them to assigned coordinates
+    .attr("cy", Math.random() * svgWidth)
+    .transition()
+    .delay(100)
+    .duration(1000)
+    .attr('r', nodes[i].radius)
+    .attr('cx', nodes[i].cx)
+    .attr('cy', nodes[i].cy)  
+    .attr('fill', function() { return 'hsl(' + Math.random() * 360 + ', 100%, 75%)' })
+    .style('stroke', 'black')
+    .style('stoke-width', 1)
+    .each('end', decreaseRadius);
+
+  }
+
+  function decreaseRadius(){
+      d3.select(this)
+        .transition()            
+          .delay(0)            
+          .duration(2000)
+          .attr("r", Math.random() * 10)
+          .each("end", increaseRadius);
+  };
+
+  function increaseRadius(){
+      d3.select(this)
+        .transition()
+          .duration(2000)
+          .attr("r", Math.random() * 50)
+          .each('end', moveAround);
+  };
+
+  function moveAround() {
+    d3.select(this)
+    .transition()
+    .duration(3000)
+    .attr('cx', Math.random() * svgWidth) // move circles around to random coordinates within viewing area
+    .attr('cy', Math.random() * svgHeight)
+    .attr('fill', function() { return 'hsl(' + Math.random() * 360 + ', 100%, 75%)' })
+    .each('end', increaseRadius);
+  };
+
+  // Other ideas: create other animation functions and Randomly apply one after the moveAround() function
+
+  </script>
+
+</body>
+</html>
