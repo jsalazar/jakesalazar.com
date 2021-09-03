@@ -1,23 +1,23 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="Jake Salazar Porfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Jake Salazar</title>
+    <meta name="description" content="Jake Salazar Porfolio">    
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <!-- build:css styles/vendor.css -->
+    <!-- build:css ../styles/vendor.css -->
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
     <!-- endbuild -->
 
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:400,700|IBM+Plex+Sans:100,400,700&display=swap" rel="stylesheet">
 
-    <!-- build:css styles/portfolio.css -->
+    <!-- build:css ../styles/portfolio.css -->
     <link rel="stylesheet" href="../styles/portfolio.css">
     <!-- endbuild -->
 
-    <!-- build:js scripts/modernizr.js -->
+    <!-- build:js ../scripts/modernizr.js -->
     <script src="../scripts/modernizr.js"></script>
     <!-- endbuild -->
   </head>
@@ -42,6 +42,52 @@
       <div class="container">
   
         <div class="row">
+
+          <div class="col-md-4">
+            <div class="card mb-4 card-pop">
+              <div class="card-pop-modal">
+                <img src="images/sample-eduteks-sm.png" alt="porfolio image: eduteks site" class="w-100">
+                <div class="overlay">
+                   <a data-bs-toggle="modal" data-bs-target="#eduteksModal" class="info btn-white btn-lg" href="#">Details</a>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">EduTEKS Site</h5>
+                <a href="https://eduteks.net/" role="button" class="btn btn-dark" target="_blank">See Site</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card mb-4 card-pop">
+              <div class="card-pop-modal">
+                <img src="images/sample-cincy-sm.png" alt="porfolio image: cincy chamber site" class="w-100">
+                <div class="overlay">
+                   <a data-bs-toggle="modal" data-bs-target="#cincyModal" class="info btn-white btn-lg" href="#">Details</a>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Cincinnati Chamber Site</h5>
+                <a href="https://www.cincinnatichamber.com/" role="button" class="btn btn-dark" target="_blank">See Site</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card mb-4 card-pop">
+              <div class="card-pop-modal">
+                <img src="images/sample-soe-sm.png" alt="porfolio image: soe site" class="w-100">
+                <div class="overlay">
+                   <a data-bs-toggle="modal" data-bs-target="#soeModal" class="info btn-white btn-lg" href="#">Details</a>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">SOE Site</h5>
+                <a href="https://soe.umich.edu/" role="button" class="btn btn-dark" target="_blank">See Site</a>
+              </div>
+            </div>
+          </div>
+
 
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
@@ -256,11 +302,109 @@
 
 <!-- ################### ----- MODALz ----- ################### -->
 <!-- BEGIN Modals -->
+
+<div class="modal fade" id="eduteksModal" tabindex="-1" aria-labelledby="eduteksModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" modal-dialog-scrollable>
+    <div class="modal-content">
+      <div class="modal-body">
+        
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-6">
+              <img src="images/sample-eduteks-lg.png" alt="porfolio image: eduteks site" class="w-100">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body px-3">
+                <h5 class="card-title">EduTEKS Site</h5>
+                <p class="card-text">
+                  This site was built as the new company website. The site includes custom illustrations, animations, rotating banners, and a call to action form to capture and store leads.
+                </p>
+                <dl class="row">
+                  <dt class="col-sm-3">My role:</dt>
+                  <dd class="col-sm-9">100% responsible for design and development</dd>
+                  <dt class="col-sm-3">Technology:</dt>
+                  <dd class="col-sm-9">Responsive, HTML5, CSS3, JQuery, Bootstrap, animation</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- modal-body -->
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cincyModal" tabindex="-1" aria-labelledby="cincyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" modal-dialog-scrollable>
+    <div class="modal-content">
+      <div class="modal-body">
+        
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-6">
+              <img src="images/sample-cincy-lg.png" alt="porfolio image: cincy site" class="w-100">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body px-3">
+                <h5 class="card-title">Cincinnati Chamber Site</h5>
+                <p class="card-text">
+                  I managed the overall day-to-day web projects for the chamber, more specifically the integration of data and marketing platform connections. Modified templates and modified code for membership sign up and sales.
+                </p>
+                <dl class="row">
+                  <dt class="col-sm-3">My role:</dt>
+                  <dd class="col-sm-9">Lead for all web projects</dd>
+                  <dt class="col-sm-3">Technology:</dt>
+                  <dd class="col-sm-9">The chamber owned ~50 domains including: <br><a href="https://www.oktoberfestzinzinnati.com/">Oktoberfest</a><br>  <a href="https://www.tasteofcincinnati.com/">Taste of Cincinnati</a><br>  <a href="https://blink2019.com/">BLINK</a><br></dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- modal-body -->
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="soeModal" tabindex="-1" aria-labelledby="soeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" modal-dialog-scrollable>
+    <div class="modal-content">
+      <div class="modal-body">
+        
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-6">
+              <img src="images/sample-soe-lg.png" alt="porfolio image: soe site" class="w-100">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body px-3">
+                <h5 class="card-title">U-M SOE Site</h5>
+                <p class="card-text">
+                  I was the Web Operations Manager and member of the project team that built this site for the School of Education at the University of Michigan. 
+                </p>
+                <dl class="row">
+                  <dt class="col-sm-3">My role:</dt>
+                  <dd class="col-sm-9">Lobby for funding, design inspiration, project management, content integration tasks</dd>
+                  <dt class="col-sm-3">Technology:</dt>
+                  <dd class="col-sm-9">Drupal, Responsive, HTML5, CSS3, Javascript</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- modal-body -->
+    </div>
+  </div>
+</div>
+
+
 <div class="modal fade" id="sparkModal" tabindex="-1" aria-labelledby="sparkModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" modal-dialog-scrollable>
     <div class="modal-content">
       <div class="modal-body">
-
         
         <div class="card">
           <div class="row no-gutters">
@@ -294,7 +438,6 @@
   <div class="modal-dialog modal-dialog-centered" modal-dialog-scrollable>
     <div class="modal-content">
       <div class="modal-body">
-
         
         <div class="card">
           <div class="row no-gutters">
@@ -329,7 +472,6 @@
   <div class="modal-dialog modal-dialog-centered" modal-dialog-scrollable>
     <div class="modal-content">
       <div class="modal-body">
-
         
         <div class="card">
           <div class="row no-gutters">
@@ -365,7 +507,6 @@
   <div class="modal-dialog modal-dialog-centered" modal-dialog-scrollable>
     <div class="modal-content">
       <div class="modal-body">
-
         
         <div class="card">
           <div class="row no-gutters">
@@ -403,7 +544,6 @@
   <div class="modal-dialog modal-dialog-centered" modal-dialog-scrollable>
     <div class="modal-content">
       <div class="modal-body">
-
         
         <div class="card">
           <div class="row no-gutters">
@@ -440,7 +580,6 @@
   <div class="modal-dialog modal-dialog-centered" modal-dialog-scrollable>
     <div class="modal-content">
       <div class="modal-body">
-
         
         <div class="card">
           <div class="row no-gutters">
@@ -476,7 +615,6 @@
   <div class="modal-dialog modal-dialog-centered" modal-dialog-scrollable>
     <div class="modal-content">
       <div class="modal-body">
-
         
         <div class="card">
           <div class="row no-gutters">
@@ -511,7 +649,6 @@
   <div class="modal-dialog modal-dialog-centered" modal-dialog-scrollable>
     <div class="modal-content">
       <div class="modal-body">
-
         
         <div class="card">
           <div class="row no-gutters">
@@ -549,7 +686,6 @@
   <div class="modal-dialog modal-dialog-centered" modal-dialog-scrollable>
     <div class="modal-content">
       <div class="modal-body">
-
         
         <div class="card">
           <div class="row no-gutters">
@@ -584,7 +720,6 @@
   <div class="modal-dialog modal-dialog-centered" modal-dialog-scrollable>
     <div class="modal-content">
       <div class="modal-body">
-
         
         <div class="card">
           <div class="row no-gutters">
@@ -618,7 +753,6 @@
   <div class="modal-dialog modal-dialog-centered" modal-dialog-scrollable>
     <div class="modal-content">
       <div class="modal-body">
-
         
         <div class="card">
           <div class="row no-gutters">
@@ -652,7 +786,6 @@
   <div class="modal-dialog modal-dialog-centered" modal-dialog-scrollable>
     <div class="modal-content">
       <div class="modal-body">
-
         
         <div class="card">
           <div class="row no-gutters">
@@ -687,7 +820,6 @@
   <div class="modal-dialog modal-dialog-centered" modal-dialog-scrollable>
     <div class="modal-content">
       <div class="modal-body">
-
         
         <div class="card">
           <div class="row no-gutters">
@@ -727,19 +859,10 @@
 <!-- END Modals -->
 
 
-
-
-
-
   <footer>
     <div class="container">&nbsp;</div>
   </footer>
   
-
-
-
-
-
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -751,12 +874,9 @@
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
-    <!-- build:js scripts/vendor.js -->
-    <!-- <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script> -->
+    <!-- build:js ../scripts/vendor.js -->
     <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- endbuild -->
-    <!-- build:js scripts/main.js -->
-    <!-- <script src="../scripts/main.js"></script> -->
-    <!-- endbuild -->
+    
   </body>
 </html>

@@ -20,7 +20,7 @@ const isTest = process.env.NODE_ENV === 'test';
 const isDev = !isProd && !isTest;
 
 function styles() {
-  return src('app/styles/**/*.scss', {
+  return src('app/styles/*.scss', {
     sourcemaps: !isProd,
   })
     .pipe($.plumber())
@@ -95,7 +95,7 @@ function lintTest() {
 };
 
 function html() {
-  return src('app/**/*.html')
+  return src(['app/**/*.html','app/portfolio/index.html'])
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe($.if(/\.js$/, $.uglify({compress: {drop_console: true}})))
     .pipe($.if(/\.css$/, $.postcss([cssnano({safe: true, autoprefixer: false})])))
