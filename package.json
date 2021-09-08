@@ -46,7 +46,8 @@
     "build": "cross-env NODE_ENV=production gulp",
     "test": "npm run serve:test",
     "tasks": "gulp --tasks",
-    "css-purge": "purgecss --config purgecss.config.js"
+    "css-purge": "purgecss --config purgecss.config.js",
+    "deploy": "./deploy.sh"
   },
   "browserslist": [
     "> 1%",
