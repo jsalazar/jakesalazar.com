@@ -1,31 +1,17 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Jake Salazar</title>
-    <meta name="description" content="Jake Salazar Porfolio">    
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+---
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fontsource/ibm-plex-sans/100.css';
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/700.css';
+import '@fontsource/ibm-plex-sans-condensed/400.css';
+import '@fontsource/ibm-plex-sans-condensed/700.css';
+import '../styles/portfolio.css';
 
-    <!-- build:css ../styles/vendor.css -->
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
-    <!-- endbuild -->
+import Base from '../layouts/Base.astro';
+import Img from '../components/Img.astro';
+---
 
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:400,700|IBM+Plex+Sans:100,400,700&display=swap" rel="stylesheet">
-
-    <!-- build:css ../styles/portfolio.css -->
-    <link rel="stylesheet" href="../styles/portfolio.css">
-    <!-- endbuild -->
-
-    <!-- build:js ../scripts/modernizr.js -->
-    <script src="../scripts/modernizr.js"></script>
-    <!-- endbuild -->
-  </head>
-  <body>
-    <!--[if IE]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    
+<Base description="Jake Salazar Portfolio">
   <main role="main">
   
     <section class="jumbotron text-center">
@@ -46,9 +32,9 @@
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
               <div class="card-pop-modal">
-                <img src="images/sample-eduteks-sm.png" alt="porfolio image: eduteks site" class="w-100">
+                <Img src="portfolio/sample-eduteks-sm.png" alt="porfolio image: eduteks site" class="w-100" widths={[400, 700]} sizes="(min-width: 768px) 33vw, 100vw" />
                 <div class="overlay">
-                   <a data-bs-toggle="modal" data-bs-target="#eduteksModal" class="info btn-white btn-lg" href="#">Details</a>
+                   <a data-bs-toggle="modal" data-bs-target="#eduteksModal" class="info btn-white btn-lg text-decoration-none" href="#">Details</a>
                 </div>
               </div>
               <div class="card-body text-center">
@@ -61,9 +47,9 @@
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
               <div class="card-pop-modal">
-                <img src="images/sample-cincy-sm.png" alt="porfolio image: cincy chamber site" class="w-100">
+                <Img src="portfolio/sample-cincy-sm.png" alt="porfolio image: cincy chamber site" class="w-100" widths={[400, 700]} sizes="(min-width: 768px) 33vw, 100vw" />
                 <div class="overlay">
-                   <a data-bs-toggle="modal" data-bs-target="#cincyModal" class="info btn-white btn-lg" href="#">Details</a>
+                   <a data-bs-toggle="modal" data-bs-target="#cincyModal" class="info btn-white btn-lg text-decoration-none" href="#">Details</a>
                 </div>
               </div>
               <div class="card-body text-center">
@@ -76,9 +62,9 @@
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
               <div class="card-pop-modal">
-                <img src="images/sample-soe-sm.png" alt="porfolio image: soe site" class="w-100">
+                <Img src="portfolio/sample-soe-sm.png" alt="porfolio image: soe site" class="w-100" widths={[400, 700]} sizes="(min-width: 768px) 33vw, 100vw" />
                 <div class="overlay">
-                   <a data-bs-toggle="modal" data-bs-target="#soeModal" class="info btn-white btn-lg" href="#">Details</a>
+                   <a data-bs-toggle="modal" data-bs-target="#soeModal" class="info btn-white btn-lg text-decoration-none" href="#">Details</a>
                 </div>
               </div>
               <div class="card-body text-center">
@@ -92,14 +78,14 @@
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
               <div class="card-pop-modal">
-                <img src="images/sample-spark-sm.png" alt="porfolio image: spark site" class="w-100">
+                <Img src="portfolio/sample-spark-sm.png" alt="porfolio image: spark site" class="w-100" widths={[400, 700]} sizes="(min-width: 768px) 33vw, 100vw" />
                 <div class="overlay">
-                   <a data-bs-toggle="modal" data-bs-target="#sparkModal" class="info btn-white btn-lg" href="#">Details</a>
+                   <a data-bs-toggle="modal" data-bs-target="#sparkModal" class="info btn-white btn-lg text-decoration-none" href="#">Details</a>
                 </div>
               </div>
               <div class="card-body text-center">
                 <h5 class="card-title">Spark Microsite</h5>
-                <a href="spark/" role="button" class="btn btn-dark" target="_blank">See Copy</a>
+                <a href="portfolio/spark/index.html" role="button" class="btn btn-dark" target="_blank">See Copy</a>
               </div>
             </div>
           </div>
@@ -107,14 +93,14 @@
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
               <div class="card-pop-modal">
-                <img src="images/sample-playmaker-sm.png" alt="porfolio image: playmaker site" class="w-100">
+                <Img src="portfolio/sample-playmaker-sm.png" alt="porfolio image: playmaker site" class="w-100" widths={[400, 700]} sizes="(min-width: 768px) 33vw, 100vw" />
                 <div class="overlay">
-                   <a data-bs-toggle="modal" data-bs-target="#playmakerModal" class="info btn-white btn-lg" href="#">Details</a>
+                   <a data-bs-toggle="modal" data-bs-target="#playmakerModal" class="info btn-white btn-lg text-decoration-none" href="#">Details</a>
                 </div>
               </div>
               <div class="card-body text-center">
                 <h5 class="card-title">Playmaker Microsite</h5>
-                <a href="playmaker/" role="button" class="btn btn-dark" target="_blank">See Copy</a>
+                <a href="portfolio/playmaker/index.html" role="button" class="btn btn-dark" target="_blank">See Copy</a>
               </div>
             </div>
           </div>
@@ -122,14 +108,14 @@
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
               <div class="card-pop-modal">
-                <img src="images/sample-tepa-sm.png" alt="porfolio image: tepa site" class="w-100">
+                <Img src="portfolio/sample-tepa-sm.png" alt="porfolio image: tepa site" class="w-100" widths={[400, 700]} sizes="(min-width: 768px) 33vw, 100vw" />
                 <div class="overlay">
-                   <a data-bs-toggle="modal" data-bs-target="#tepaModal" class="info btn-white btn-lg" href="#">Details</a>
+                   <a data-bs-toggle="modal" data-bs-target="#tepaModal" class="info btn-white btn-lg text-decoration-none" href="#">Details</a>
                 </div>
               </div>
               <div class="card-body text-center">
                 <h5 class="card-title">TEPA Microsite</h5>
-                <a href="tepa/" role="button" class="btn btn-dark" target="_blank">See Copy</a>
+                <a href="portfolio/tepa/index.html" role="button" class="btn btn-dark" target="_blank">See Copy</a>
               </div>
             </div>
           </div>
@@ -137,14 +123,14 @@
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
               <div class="card-pop-modal">
-                <img src="images/sample-digital-natives-sm.png" alt="porfolio image: digital Natives site" class="w-100">
+                <Img src="portfolio/sample-digital-natives-sm.png" alt="porfolio image: digital Natives site" class="w-100" widths={[400, 700]} sizes="(min-width: 768px) 33vw, 100vw" />
                 <div class="overlay">
-                   <a data-bs-toggle="modal" data-bs-target="#digitalNativesModal" class="info btn-white btn-lg" href="#">Details</a>
+                   <a data-bs-toggle="modal" data-bs-target="#digitalNativesModal" class="info btn-white btn-lg text-decoration-none" href="#">Details</a>
                 </div>
               </div>
               <div class="card-body text-center">
                 <h5 class="card-title">Digital Natives Microsite</h5>
-                <a href="digital-natives/" role="button" class="btn btn-dark" target="_blank">See Copy</a>
+                <a href="portfolio/digital-natives/index.html" role="button" class="btn btn-dark" target="_blank">See Copy</a>
               </div>
             </div>
           </div>
@@ -152,14 +138,14 @@
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
               <div class="card-pop-modal">
-                <img src="images/sample-search-filter-ui-sm.png" alt="porfolio image: search Filter UI site" class="w-100">
+                <Img src="portfolio/sample-search-filter-ui-sm.png" alt="porfolio image: search Filter UI site" class="w-100" widths={[400, 700]} sizes="(min-width: 768px) 33vw, 100vw" />
                 <div class="overlay">
-                   <a data-bs-toggle="modal" data-bs-target="#searchFilterUIModal" class="info btn-white btn-lg" href="#">Details</a>
+                   <a data-bs-toggle="modal" data-bs-target="#searchFilterUIModal" class="info btn-white btn-lg text-decoration-none" href="#">Details</a>
                 </div>
               </div>
               <div class="card-body text-center">
                 <h5 class="card-title">Search & Filter UI</h5>
-                <a href="search-filter-ui/" role="button" class="btn btn-dark" target="_blank">See Copy</a>
+                <a href="portfolio/search-filter-ui/index.html" role="button" class="btn btn-dark" target="_blank">See Copy</a>
               </div>
             </div>
           </div>
@@ -167,14 +153,14 @@
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
               <div class="card-pop-modal">
-                <img src="images/sample-sales-funnel-sm.png" alt="porfolio image: sales funnel site" class="w-100">
+                <Img src="portfolio/sample-sales-funnel-sm.png" alt="porfolio image: sales funnel site" class="w-100" widths={[400, 700]} sizes="(min-width: 768px) 33vw, 100vw" />
                 <div class="overlay">
-                   <a data-bs-toggle="modal" data-bs-target="#salesFunnelModal" class="info btn-white btn-lg" href="#">Details</a>
+                   <a data-bs-toggle="modal" data-bs-target="#salesFunnelModal" class="info btn-white btn-lg text-decoration-none" href="#">Details</a>
                 </div>
               </div>
               <div class="card-body text-center">
                 <h5 class="card-title">Online Course</h5>
-                <a href="sales/" role="button" class="btn btn-dark" target="_blank">See Copy</a>
+                <a href="portfolio/sales/index.html" role="button" class="btn btn-dark" target="_blank">See Copy</a>
               </div>
             </div>
           </div>
@@ -182,14 +168,14 @@
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
               <div class="card-pop-modal">
-                <img src="images/sample-purpose-sm.png" alt="porfolio image: purpose site" class="w-100">
+                <Img src="portfolio/sample-purpose-sm.png" alt="porfolio image: purpose site" class="w-100" widths={[400, 700]} sizes="(min-width: 768px) 33vw, 100vw" />
                 <div class="overlay">
-                   <a data-bs-toggle="modal" data-bs-target="#purposeModal" class="info btn-white btn-lg" href="#">Details</a>
+                   <a data-bs-toggle="modal" data-bs-target="#purposeModal" class="info btn-white btn-lg text-decoration-none" href="#">Details</a>
                 </div>
               </div>
               <div class="card-body text-center">
                 <h5 class="card-title">Purpose Microsite</h5>
-                <a href="purpose/" role="button" class="btn btn-dark" target="_blank">See Copy</a>
+                <a href="portfolio/purpose/index.html" role="button" class="btn btn-dark" target="_blank">See Copy</a>
               </div>
             </div>
           </div>
@@ -197,14 +183,14 @@
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
               <div class="card-pop-modal">
-                <img src="images/sample-CRUD-workflow-sm.png" alt="porfolio image: CRUD workflow applications" class="w-100">
+                <Img src="portfolio/sample-CRUD-workflow-sm.png" alt="porfolio image: CRUD workflow applications" class="w-100" widths={[400, 700]} sizes="(min-width: 768px) 33vw, 100vw" />
                 <div class="overlay">
-                   <a data-bs-toggle="modal" data-bs-target="#CRUDModal" class="info btn-white btn-lg" href="#">Details</a>
+                   <a data-bs-toggle="modal" data-bs-target="#CRUDModal" class="info btn-white btn-lg text-decoration-none" href="#">Details</a>
                 </div>
               </div>
               <div class="card-body text-center">
                 <h5 class="card-title">Multi-step Applications</h5>
-                <!-- <a href="purpose/" role="button" class="btn btn-dark" target="_blank">See Copy</a> -->
+                <!-- <a href="portfolio/purpose/" role="button" class="btn btn-dark" target="_blank">See Copy</a> -->
               </div>
             </div>
           </div>
@@ -212,14 +198,14 @@
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
               <div class="card-pop-modal">
-                <img src="images/sample-angular-app-sm.png" alt="porfolio image: Angular App" class="w-100">
+                <Img src="portfolio/sample-angular-app-sm.png" alt="porfolio image: Angular App" class="w-100" widths={[400, 700]} sizes="(min-width: 768px) 33vw, 100vw" />
                 <div class="overlay">
-                   <a data-bs-toggle="modal" data-bs-target="#angularModal" class="info btn-white btn-lg" href="#">Details</a>
+                   <a data-bs-toggle="modal" data-bs-target="#angularModal" class="info btn-white btn-lg text-decoration-none" href="#">Details</a>
                 </div>
               </div>
               <div class="card-body text-center">
                 <h5 class="card-title">Angular App Intranet</h5>
-                <!-- <a href="purpose/" role="button" class="btn btn-dark" target="_blank">See Copy</a> -->
+                <!-- <a href="portfolio/purpose/" role="button" class="btn btn-dark" target="_blank">See Copy</a> -->
               </div>
             </div>
           </div>
@@ -227,14 +213,14 @@
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
               <div class="card-pop-modal">
-                <img src="images/sample-material-design-sm.png" alt="porfolio image: Material Design app" class="w-100">
+                <Img src="portfolio/sample-material-design-sm.png" alt="porfolio image: Material Design app" class="w-100" widths={[400, 700]} sizes="(min-width: 768px) 33vw, 100vw" />
                 <div class="overlay">
-                   <a data-bs-toggle="modal" data-bs-target="#materialModal" class="info btn-white btn-lg" href="#">Details</a>
+                   <a data-bs-toggle="modal" data-bs-target="#materialModal" class="info btn-white btn-lg text-decoration-none" href="#">Details</a>
                 </div>
               </div>
               <div class="card-body text-center">
                 <h5 class="card-title">Material Design ES6</h5>
-                <a href="material/" role="button" class="btn btn-dark" target="_blank">See Copy</a>
+                <a href="portfolio/material/index.html" role="button" class="btn btn-dark" target="_blank">See Copy</a>
               </div>
             </div>
           </div>
@@ -242,14 +228,14 @@
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
               <div class="card-pop-modal">
-                <img src="images/sample-processing-js-bouncing-sm.png" alt="porfolio image: bouncing ball animation" class="w-100">
+                <Img src="portfolio/sample-processing-js-bouncing-sm.png" alt="porfolio image: bouncing ball animation" class="w-100" widths={[400, 700]} sizes="(min-width: 768px) 33vw, 100vw" />
                 <div class="overlay">
-                   <a data-bs-toggle="modal" data-bs-target="#bouncingModal" class="info btn-white btn-lg" href="#">Details</a>
+                   <a data-bs-toggle="modal" data-bs-target="#bouncingModal" class="info btn-white btn-lg text-decoration-none" href="#">Details</a>
                 </div>
               </div>
               <div class="card-body text-center">
                 <h5 class="card-title">Bouncing Ball (animation)</h5>
-                <a href="animation-bouncing/" role="button" class="btn btn-dark" target="_blank">See Animation</a>
+                <a href="portfolio/animation-bouncing/index.html" role="button" class="btn btn-dark" target="_blank">See Animation</a>
               </div>
             </div>
           </div>
@@ -257,14 +243,14 @@
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
               <div class="card-pop-modal">
-                <img src="images/sample-processing-js-matrix-sm.png" alt="porfolio image: matrix animation" class="w-100">
+                <Img src="portfolio/sample-processing-js-matrix-sm.png" alt="porfolio image: matrix animation" class="w-100" widths={[400, 700]} sizes="(min-width: 768px) 33vw, 100vw" />
                 <div class="overlay">
-                   <a data-bs-toggle="modal" data-bs-target="#matrixModal" class="info btn-white btn-lg" href="#">Details</a>
+                   <a data-bs-toggle="modal" data-bs-target="#matrixModal" class="info btn-white btn-lg text-decoration-none" href="#">Details</a>
                 </div>
               </div>
               <div class="card-body text-center">
                 <h5 class="card-title">The Matrix (animation)</h5>
-                <a href="animation-matrix/" role="button" class="btn btn-dark" target="_blank">See Animation</a>
+                <a href="portfolio/animation-matrix/index.html" role="button" class="btn btn-dark" target="_blank">See Animation</a>
               </div>
             </div>
           </div>
@@ -272,14 +258,14 @@
           <div class="col-md-4">
             <div class="card mb-4 card-pop">
               <div class="card-pop-modal">
-                <img src="images/sample-d3-js-randoms-sm.png" alt="porfolio image: randoms animation" class="w-100">
+                <Img src="portfolio/sample-d3-js-randoms-sm.png" alt="porfolio image: randoms animation" class="w-100" widths={[400, 700]} sizes="(min-width: 768px) 33vw, 100vw" />
                 <div class="overlay">
-                   <a data-bs-toggle="modal" data-bs-target="#randomsModal" class="info btn-white btn-lg" href="#">Details</a>
+                   <a data-bs-toggle="modal" data-bs-target="#randomsModal" class="info btn-white btn-lg text-decoration-none" href="#">Details</a>
                 </div>
               </div>
               <div class="card-body text-center">
                 <h5 class="card-title">Randoms with Movement (animation)</h5>
-                <a href="animation-randoms/" role="button" class="btn btn-dark" target="_blank">See Animation</a>
+                <a href="portfolio/animation-randoms/index.html" role="button" class="btn btn-dark" target="_blank">See Animation</a>
               </div>
             </div>
           </div>
@@ -311,7 +297,7 @@
         <div class="card">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="images/sample-eduteks-lg.png" alt="porfolio image: eduteks site" class="w-100">
+              <Img src="portfolio/sample-eduteks-lg.png" alt="porfolio image: eduteks site" class="w-100" widths={[800, 1200]} sizes="(min-width: 1200px) 1140px, 100vw" />
             </div>
             <div class="col-md-6">
               <div class="card-body px-3">
@@ -343,7 +329,7 @@
         <div class="card">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="images/sample-cincy-lg.png" alt="porfolio image: cincy site" class="w-100">
+              <Img src="portfolio/sample-cincy-lg.png" alt="porfolio image: cincy site" class="w-100" widths={[800, 1200]} sizes="(min-width: 1200px) 1140px, 100vw" />
             </div>
             <div class="col-md-6">
               <div class="card-body px-3">
@@ -376,7 +362,7 @@
         <div class="card">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="images/sample-soe-lg.png" alt="porfolio image: soe site" class="w-100">
+              <Img src="portfolio/sample-soe-lg.png" alt="porfolio image: soe site" class="w-100" widths={[800, 1200]} sizes="(min-width: 1200px) 1140px, 100vw" />
             </div>
             <div class="col-md-6">
               <div class="card-body px-3">
@@ -409,7 +395,7 @@
         <div class="card">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="images/sample-spark-lg.png" alt="porfolio image: spark site" class="w-100">
+              <Img src="portfolio/sample-spark-lg.png" alt="porfolio image: spark site" class="w-100" widths={[800, 1200]} sizes="(min-width: 1200px) 1140px, 100vw" />
             </div>
             <div class="col-md-6">
               <div class="card-body px-3">
@@ -442,7 +428,7 @@
         <div class="card">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="images/sample-playmaker-lg.jpg" alt="porfolio image: playmaker site" class="w-100">
+              <Img src="portfolio/sample-playmaker-lg.jpg" alt="porfolio image: playmaker site" class="w-100" widths={[800, 1200]} sizes="(min-width: 1200px) 1140px, 100vw" />
             </div>
             <div class="col-md-6">
               <div class="card-body px-3">
@@ -476,7 +462,7 @@
         <div class="card">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="images/sample-tepa-lg.png" alt="porfolio image: tepa site" class="w-100">
+              <Img src="portfolio/sample-tepa-lg.png" alt="porfolio image: tepa site" class="w-100" widths={[800, 1200]} sizes="(min-width: 1200px) 1140px, 100vw" />
             </div>
             <div class="col-md-6">
               <div class="card-body px-3">
@@ -511,7 +497,7 @@
         <div class="card">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="images/sample-digital-natives-lg.png" alt="porfolio image: digital Natives site" class="w-100">
+              <Img src="portfolio/sample-digital-natives-lg.png" alt="porfolio image: digital Natives site" class="w-100" widths={[800, 1200]} sizes="(min-width: 1200px) 1140px, 100vw" />
             </div>
             <div class="col-md-6">
               <div class="card-body px-3">
@@ -548,7 +534,7 @@
         <div class="card">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="images/sample-search-filter-ui-lg.png" alt="porfolio image: search Filter UI site" class="w-100">
+              <Img src="portfolio/sample-search-filter-ui-lg.png" alt="porfolio image: search Filter UI site" class="w-100" widths={[800, 1200]} sizes="(min-width: 1200px) 1140px, 100vw" />
             </div>
             <div class="col-md-6">
               <div class="card-body px-3">
@@ -584,7 +570,7 @@
         <div class="card">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="images/sample-sales-funnel-lg.png" alt="porfolio image: sales funnel site" class="w-100">
+              <Img src="portfolio/sample-sales-funnel-lg.png" alt="porfolio image: sales funnel site" class="w-100" widths={[800, 1200]} sizes="(min-width: 1200px) 1140px, 100vw" />
             </div>
             <div class="col-md-6">
               <div class="card-body px-3">
@@ -619,7 +605,7 @@
         <div class="card">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="images/sample-purpose-lg.png" alt="porfolio image: purpose site" class="w-100">
+              <Img src="portfolio/sample-purpose-lg.png" alt="porfolio image: purpose site" class="w-100" widths={[800, 1200]} sizes="(min-width: 1200px) 1140px, 100vw" />
             </div>
             <div class="col-md-6">
               <div class="card-body px-3">
@@ -653,7 +639,7 @@
         <div class="card">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="images/sample-CRUD-workflow-lg.png" alt="porfolio image: Multi-step Applications" class="w-100">
+              <Img src="portfolio/sample-CRUD-workflow-lg.png" alt="porfolio image: Multi-step Applications" class="w-100" widths={[800, 1200]} sizes="(min-width: 1200px) 1140px, 100vw" />
             </div>
             <div class="col-md-6">
               <div class="card-body px-3">
@@ -690,7 +676,7 @@
         <div class="card">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="images/sample-angular-app-lg.png" alt="porfolio image: Angular App Intranet" class="w-100">
+              <Img src="portfolio/sample-angular-app-lg.png" alt="porfolio image: Angular App Intranet" class="w-100" widths={[800, 1200]} sizes="(min-width: 1200px) 1140px, 100vw" />
             </div>
             <div class="col-md-6">
               <div class="card-body px-3">
@@ -724,7 +710,7 @@
         <div class="card">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="images/sample-material-design-lg.png" alt="porfolio image: Material Design ES6" class="w-100">
+              <Img src="portfolio/sample-material-design-lg.png" alt="porfolio image: Material Design ES6" class="w-100" widths={[800, 1200]} sizes="(min-width: 1200px) 1140px, 100vw" />
             </div>
             <div class="col-md-6">
               <div class="card-body px-3">
@@ -757,7 +743,7 @@
         <div class="card">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="images/sample-processing-js-matrix-lg.png" alt="porfolio image: the matrix animation" class="w-100">
+              <Img src="portfolio/sample-processing-js-matrix-lg.png" alt="porfolio image: the matrix animation" class="w-100" widths={[800, 1200]} sizes="(min-width: 1200px) 1140px, 100vw" />
             </div>
             <div class="col-md-6">
               <div class="card-body px-3">
@@ -790,7 +776,7 @@
         <div class="card">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="images/sample-processing-js-bouncing-lg.png" alt="porfolio image: bouncing ball animation" class="w-100">
+              <Img src="portfolio/sample-processing-js-bouncing-lg.png" alt="porfolio image: bouncing ball animation" class="w-100" widths={[800, 1200]} sizes="(min-width: 1200px) 1140px, 100vw" />
             </div>
             <div class="col-md-6">
               <div class="card-body px-3">
@@ -824,7 +810,7 @@
         <div class="card">
           <div class="row no-gutters">
             <div class="col-md-6">
-              <img src="images/sample-d3-js-randoms-lg.png" alt="porfolio image: randoms animation" class="w-100">
+              <Img src="portfolio/sample-d3-js-randoms-lg.png" alt="porfolio image: randoms animation" class="w-100" widths={[800, 1200]} sizes="(min-width: 1200px) 1140px, 100vw" />
             </div>
             <div class="col-md-6">
               <div class="card-body px-3">
@@ -862,21 +848,7 @@
   <footer>
     <div class="container">&nbsp;</div>
   </footer>
-  
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
-    <!-- build:js ../scripts/vendor.js -->
-    <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- endbuild -->
-    
-  </body>
-</html>
+  <script>
+    import 'bootstrap/js/dist/modal'; // project detail pop-ups
+  </script>
+</Base>

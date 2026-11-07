@@ -1,16 +1,16 @@
 # dependencies
-node_modules
-bower_components
+node_modules/
 
-# compiled output
-/dist
-/.tmp
-/scripts
-/styles
-/temp-assets
+# build output
+dist/
+.astro/
 
-# misc files
+# env / local
+.env
+.env.*
 .DS_Store
 Thumbs.db
+
+# local-only notes and scripts (deploys now run from GitHub Actions)
 how-to.txt
 deploy.sh

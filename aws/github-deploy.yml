@@ -1,0 +1,122 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  jakesalazar.com push-to-deploy. Creates the IAM role GitHub Actions assumes
+  through OIDC (no stored access keys), a CloudFront Function for clean URLs,
+  and a security-headers policy. See aws/README.md for the steps.
+  Deploy this stack in us-east-1.
+
+Parameters:
+  GitHubRepo:
+    Type: String
+    Default: jsalazar/jakesalazar.com
+    Description: owner/name of the repository allowed to deploy
+  BucketName:
+    Type: String
+    Default: jakesalazar.com
+  DistributionId:
+    Type: String
+    Default: E3T3BX3KQ5ZY43
+  CreateOidcProvider:
+    Type: String
+    AllowedValues: ['true', 'false']
+    Default: 'true'
+    Description: >
+      An account can only have one GitHub OIDC provider. Set to false if you
+      already created token.actions.githubusercontent.com for another site.
+
+Conditions:
+  MakeProvider: !Equals [!Ref CreateOidcProvider, 'true']
+
+Resources:
+  GitHubOidcProvider:
+    Type: AWS::IAM::OIDCProvider
+    Condition: MakeProvider
+    Properties:
+      Url: https://token.actions.githubusercontent.com
+      ClientIdList: [sts.amazonaws.com]
+
+  DeployRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: GithubAction-jakesalazar.com
+      Description: Push-to-deploy from GitHub Actions (main branch only)
+      MaxSessionDuration: 3600
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Federated: !Sub arn:aws:iam::${AWS::AccountId}:oidc-provider/token.actions.githubusercontent.com
+            Action: sts:AssumeRoleWithWebIdentity
+            Condition:
+              StringEquals:
+                token.actions.githubusercontent.com:aud: sts.amazonaws.com
+                # Only the "production" environment of this repo, which the
+                # workflow uses solely for pushes to main.
+                token.actions.githubusercontent.com:sub: !Sub repo:${GitHubRepo}:environment:production
+      Policies:
+        - PolicyName: deploy-site
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: s3:ListBucket
+                Resource: !Sub arn:aws:s3:::${BucketName}
+              - Effect: Allow
+                Action: [s3:GetObject, s3:PutObject, s3:DeleteObject]
+                Resource: !Sub arn:aws:s3:::${BucketName}/*
+              - Effect: Allow
+                Action: [cloudfront:CreateInvalidation, cloudfront:GetInvalidation]
+                Resource: !Sub arn:aws:cloudfront::${AWS::AccountId}:distribution/${DistributionId}
+
+  # Viewer-request function: /portfolio/spark/ -> /portfolio/spark/index.html,
+  # and /about -> /about.html, so links work without the .html suffix.
+  CleanUrlsFunction:
+    Type: AWS::CloudFront::Function
+    Properties:
+      Name: jakesalazar-clean-urls
+      AutoPublish: true
+      FunctionConfig:
+        Comment: Map folder and extensionless URLs to S3 objects
+        Runtime: cloudfront-js-2.0
+      FunctionCode: |
+        function handler(event) {
+          var request = event.request;
+          var uri = request.uri;
+          if (uri.endsWith('/')) {
+            request.uri = uri + 'index.html';
+          } else if (!uri.split('/').pop().includes('.')) {
+            request.uri = uri + '.html';
+          }
+          return request;
+        }
+
+  SecurityHeadersPolicy:
+    Type: AWS::CloudFront::ResponseHeadersPolicy
+    Properties:
+      ResponseHeadersPolicyConfig:
+        Name: jakesalazar-security-headers
+        Comment: HSTS and basic hardening headers
+        SecurityHeadersConfig:
+          StrictTransportSecurity:
+            AccessControlMaxAgeSec: 63072000
+            IncludeSubdomains: true
+            Preload: false
+            Override: true
+          ContentTypeOptions:
+            Override: true
+          FrameOptions:
+            FrameOption: SAMEORIGIN
+            Override: true
+          ReferrerPolicy:
+            ReferrerPolicy: strict-origin-when-cross-origin
+            Override: true
+
+Outputs:
+  DeployRoleArn:
+    Description: Put this in the repo variable AWS_ROLE_ARN
+    Value: !GetAtt DeployRole.Arn
+  CleanUrlsFunctionArn:
+    Value: !GetAtt CleanUrlsFunction.FunctionMetadata.FunctionARN
+  SecurityHeadersPolicyId:
+    Value: !Ref SecurityHeadersPolicy

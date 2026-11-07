@@ -1,0 +1,78 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# One deploy at a time; a newer push waits for the running one to finish.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 3
+
+  deploy:
+    # Pull requests only get the build check above; pushes to main go live.
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment: production
+    permissions:
+      id-token: write # lets GitHub hand AWS a short-lived OIDC token (no stored keys)
+      contents: read
+    env:
+      BUCKET: ${{ vars.S3_BUCKET }}
+      DISTRIBUTION_ID: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Upload fingerprinted assets (cached for a year)
+        run: >
+          aws s3 sync dist/_astro "s3://$BUCKET/_astro"
+          --cache-control "public, max-age=31536000, immutable"
+
+      - name: Upload everything else (revalidated on each visit)
+        run: >
+          aws s3 sync dist "s3://$BUCKET"
+          --delete
+          --exclude "_astro/*"
+          --cache-control "public, max-age=0, must-revalidate"
+
+      - name: Remove old fingerprinted assets
+        run: aws s3 sync dist/_astro "s3://$BUCKET/_astro" --delete --size-only
+
+      - name: Refresh CloudFront
+        run: >
+          aws cloudfront create-invalidation
+          --distribution-id "$DISTRIBUTION_ID"
+          --paths "/*"

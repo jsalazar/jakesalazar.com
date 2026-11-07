@@ -1,0 +1,69 @@
+---
+// Shared page shell: <head>, favicons, social tags, analytics.
+// Each page imports Bootstrap first, then its own fonts and styles,
+// so page styles always win over Bootstrap's.
+
+interface Props {
+  title?: string;
+  description: string;
+  socialDescription?: string;
+}
+
+const {
+  title = 'Jake Salazar',
+  description,
+  socialDescription = 'Jake Salazar is a developer from San Antonio Texas.',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname.replace(/index\.html$/, ''), Astro.site);
+const socialImage = new URL('/images/jake-salazar-logo.png', Astro.site);
+const gaId = 'G-CCEQ3KBFS2';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Social cards -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={socialDescription} />
+    <meta name="twitter:url" content={canonical} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={socialDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:type" content="image/png" />
+
+    <slot name="head" />
+
+    <!-- Google Analytics -->
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+    <script is:inline define:vars={{ gaId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', gaId);
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
