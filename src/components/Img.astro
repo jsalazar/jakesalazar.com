@@ -1,0 +1,51 @@
+---
+// Responsive, optimized image. Pass a path relative to src/assets/images,
+// e.g. <Img src="testimonials/Drake.jpg" alt="Drake" class="w-25" />.
+// Astro converts it to AVIF/WebP at several widths and adds width/height.
+import type { ImageMetadata } from 'astro';
+import { Picture } from 'astro:assets';
+
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  widths?: number[];
+  sizes?: string;
+  loading?: 'lazy' | 'eager';
+  style?: string;
+  /** render at the image's natural size (no responsive widths), e.g. logos */
+  fixed?: boolean;
+}
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/images/**/*.{jpg,jpeg,png,webp,gif}',
+  { eager: true },
+);
+
+const {
+  src,
+  alt,
+  class: className,
+  widths = [400, 800, 1200],
+  sizes = '(min-width: 992px) 50vw, 100vw',
+  loading = 'lazy',
+  style,
+  fixed = false,
+} = Astro.props;
+
+const image = images[`/src/assets/images/${src}`]?.default;
+if (!image) throw new Error(`Img: src/assets/images/${src} not found`);
+const usable = widths.filter((w) => w <= image.width);
+---
+
+<Picture
+  src={image}
+  alt={alt}
+  class={className}
+  style={style}
+  formats={['avif', 'webp']}
+  widths={fixed ? undefined : usable.length ? usable : [image.width]}
+  sizes={fixed ? undefined : sizes}
+  loading={loading}
+  decoding="async"
+/>

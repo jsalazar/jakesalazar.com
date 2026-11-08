@@ -1,0 +1,56 @@
+---
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/heebo/700.css';
+import '@splidejs/splide/css/core';
+import '../styles/main.css';
+
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Trusted from '../components/Trusted.astro';
+import Solutions from '../components/Solutions.astro';
+import Skills from '../components/Skills.astro';
+import Reliable from '../components/Reliable.astro';
+import Endorsements from '../components/Endorsements.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'San Antonio',
+    addressRegion: 'TX',
+    streetAddress: '123 Sesame St.',
+  },
+  description: 'Jake Salazar is cool.',
+  name: 'Iqoniiq Inc',
+  telephone: '210-995-6767',
+  url: 'https://jakesalazar.com/',
+};
+---
+
+<Base description="Jake Salazar is a Mexillent developer from the WestSide!">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <Header />
+
+  <main>
+    <Hero />
+    <Trusted />
+    <Solutions />
+    <Skills />
+    <Reliable />
+    <Endorsements />
+    <Contact />
+  </main>
+
+  <Footer />
+
+  <script>
+    import '../scripts/main.js';
+  </script>
+</Base>
